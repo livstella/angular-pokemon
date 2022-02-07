@@ -4,11 +4,13 @@ import {HttpClientModule} from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './pokemon/pokemon-list/pokemon-list.component';
+import { PokemonSelectedComponent } from './pokemon-selected/pokemon-selected.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonListComponent
+    PokemonListComponent,
+    PokemonSelectedComponent
   ],
   imports: [
     BrowserModule,

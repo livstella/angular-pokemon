@@ -26,5 +26,8 @@ export class TrainersService{
     public getTrainers(): Trainer[]{
         return this.trainers
     }
+    public getError(): string{
+        return this.error
+    }
   
 }

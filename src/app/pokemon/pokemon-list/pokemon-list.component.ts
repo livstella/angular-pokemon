@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Trainer } from 'src/app/models/trainer.model';
+import { SelectedPokemonService } from 'src/app/services/selected-pokemon.service';
 import { TrainersService } from 'src/app/services/trainers.service';
 
 @Component({
@@ -8,7 +9,11 @@ import { TrainersService } from 'src/app/services/trainers.service';
   styleUrls: ['./pokemon-list.component.css']
 })
 export class PokemonListComponent implements OnInit {
-  constructor( private readonly trainerService: TrainersService) {
+  constructor( 
+    private readonly trainerService: TrainersService,
+    private readonly selectedTrainerService: SelectedPokemonService
+    ) {
+
   }
 
   ngOnInit(): void {
@@ -17,5 +22,7 @@ export class PokemonListComponent implements OnInit {
 get trainers(): Trainer[]{
   return this.trainerService.getTrainers()
 }
-
+onTrainerClicked(trainer: Trainer):void{
+  this.selectedTrainerService.setTrainer(trainer);
+}
 }
