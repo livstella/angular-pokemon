@@ -1,6 +1,10 @@
-# AngularTest
+# Angular Pokemon
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.1.
+
+## Contributors
+- Anders Madsen (@4ndersom)
+- Liv Reinhold (@livstella)
 
 ## Development server
 
