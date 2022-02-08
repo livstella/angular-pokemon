@@ -1,4 +1,3 @@
-import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,6 +11,7 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginPage implements OnInit{
 
+  loginError:string=""
 
 constructor( 
     private loginService:LoginService, 
@@ -23,8 +23,17 @@ ngOnInit(): void {
 
   public onSubmit(loginForm: NgForm): void {
       const {trainerName}=loginForm.value;
-      this.loginService.trainerName=trainerName;
-      this.router.navigateByUrl("/trainer");
+
+      this.loginService.login(trainerName,[])
+      .subscribe({
+        next:(response: any)=>{
+          console.log("login:", response)
+
+        }
+      })
+      
+    this.loginService.trainerName=trainerName;
+  this.router.navigateByUrl("/trainer");
     
     
   }
