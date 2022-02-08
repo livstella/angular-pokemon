@@ -7,6 +7,8 @@
     <div *ngIf="trainer.username==trainerName &&  trainer.pokemon.length!==0">
       {{ trainer.pokemon }}
     </div> 
+
+    <!-- If there are no pokemons this div will be displayed instead-->
     <div *ngIf="trainer.username==trainerName &&  trainer.pokemon.length===0">
       You have no pokemons yet
     </div> 
