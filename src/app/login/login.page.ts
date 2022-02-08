@@ -27,8 +27,7 @@ ngOnInit(): void {
       this.loginService.login(trainerName,[])
       .subscribe({
         next:(response: any)=>{
-          console.log("login:", response)
-
+           this.loginService.pokemons=response.pokemon
         }
       })
       

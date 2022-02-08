@@ -9,17 +9,30 @@ const URL = 'https://experis-assignment-api.herokuapp.com/trainers';
   providedIn: 'root',
 })
 export class LoginService {
+
+  
   private _trainerName: string="";
 
+//Getter for the trainerName
   get trainerName():string{
     return this._trainerName;
   }
 
+//Setter for the trainerName
   set trainerName(trainerName: string){
     sessionStorage.setItem(USER_KEY, trainerName)
     this._trainerName=trainerName;
   }
 
+
+  private _pokemons: []=[];
+
+  get pokemons():[]{
+    return this._pokemons;
+  }
+  set pokemons(pokemons){
+    this._pokemons=pokemons
+  }
 
 
 

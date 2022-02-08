@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TrainersPage } from './trainers/trainers.page';
 import { LoginPage } from './login/login.page';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { LoginPage } from './login/login.page';
     PokemonSelectedComponent,
     TrainersPage,
     LoginPage,
+
   ],
   imports: [
     BrowserModule,

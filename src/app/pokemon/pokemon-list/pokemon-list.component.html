@@ -1,7 +1,15 @@
-<h2>pokemon-list component with list of trainers</h2>
+<h2>pokemon-list component with list of {{trainerName}}'s pokemons</h2>
 
-<ul>
-  <li *ngFor="let trainer of trainers" (click)="onTrainerClicked(trainer)" >
-    {{ trainer.username }}
-  </li>
-</ul>
+<!-- Loops over the array of trainers from the api-->
+<div *ngFor="let trainer of trainers">
+  
+    <!-- If the username is equal to user trainername of the currently logged in, that trainers pokemons are displayed-->
+    <div *ngIf="trainer.username==trainerName &&  trainer.pokemon.length!==0">
+      {{ trainer.pokemon }}
+    </div> 
+    <div *ngIf="trainer.username==trainerName &&  trainer.pokemon.length===0">
+      You have no pokemons yet
+    </div> 
+ 
+
+</div>
