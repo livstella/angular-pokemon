@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { TrainersPage } from './trainers/trainers.page';
 import { LoginPage } from './login/login.page';
+import { AuthGuard } from './guards/auth.guard';
 
 // Pages:
-// Login/Landingpage
-//Trainer page
-//Catalouge page
+// Login/Landingpage - check
+// Trainer page -check 
+// Catalouge page
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
   {
     path: 'trainer',
     component: TrainersPage,
+    canActivate: [ AuthGuard ]
   },
   {
     path:'login',
