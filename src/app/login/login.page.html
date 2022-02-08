@@ -1,0 +1,18 @@
+<h1>Log in</h1>
+ <!--- login form with the required name field with minimum length of 3 characters --->
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+  <fieldset>
+    <label for="trainer-name">Trainer name</label>
+    <input type="text" 
+            id="trainerName" 
+            name="trainerName" 
+            required
+            minlength="3"
+            placeholder="Cool username" 
+            ngModel #trainerName="ngModel"/>
+  </fieldset>
+  <!--- Submit button disabled unless the required trainername exists --->
+  <div *ngIf="trainerName.invalid &&(trainerName.touched ||trainerName.dirty)"  >Trainer name must be at least 3 characters long</div>
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
+ 
+</form>
